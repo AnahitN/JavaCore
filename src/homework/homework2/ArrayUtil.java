@@ -61,7 +61,7 @@ public class ArrayUtil {
             result = result + array[j];
 
         }
-        System.out.println("Միջին թվաբանականը հավասար է " + result / 5 + "-ի");
+        System.out.println("Միջին թվաբանականը հավասար է " + result / 10 + "-ի");
 
         System.out.println("Մասիվի էլեմենտների գումարը հավասար է " + result + "-ի");
         System.out.println("մասիվի առաջին էլեմենտը " + array[0] + "ն է։");
