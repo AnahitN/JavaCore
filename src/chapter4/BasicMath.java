@@ -15,7 +15,16 @@ public class BasicMath {
         System.out.println("d = " + d);
         System.out.println("e = " + e);
         System.out.println("\nАрифметика с плавающей точкой");
-
+        double da = 1 + 1;
+        double db = da * 3;
+        double dc = db / 4;
+        double dd = dc - a;
+        double de = -dd;
+        System.out.println("da = " + da);
+        System.out.println("db = " + db);
+        System.out.println("dc = " + dc);
+        System.out.println("dd = " + dd);
+        System.out.println("de = " + de);
 
     }
 
