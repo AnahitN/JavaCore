@@ -22,7 +22,7 @@ public class CharArrayExample {
 
 
         char[] chars3 = {'j', 'a', 'v', 'a', 'l', 'o', 'l', 'y'};
-        System.out.print("3. ");
+        System.out.print("3.");
         boolean a = true;
         boolean b = false;
         if (chars3[chars3.length - 2] == 'l') {
