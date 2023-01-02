@@ -5,12 +5,12 @@ public class CharArrayExample {
     public static void main(String[] args) {
         char[] chars = {'j', 'a', 'v', 'a', 'l', 'o', 'v', 'e'};
         char c = 'o';
-        int x;
+        int quantity;
         for (int i = 0; i < chars.length; i++) {
-            x = 0;
+            quantity = 0;
             if (chars[i] == c) {
-                x++;
-                System.out.println("1. փոփոխականի քանակը " + x + " է:");
+                quantity++;
+                System.out.println("1. փոփոխականի քանակը " + quantity + " է:");
             }
 
         }
