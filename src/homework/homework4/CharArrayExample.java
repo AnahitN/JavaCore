@@ -5,15 +5,15 @@ public class CharArrayExample {
     public static void main(String[] args) {
         char[] chars = {'j', 'a', 'v', 'a', 'l', 'o', 'v', 'e'};
         char c = 'o';
-        int quantity;
+        int quantity = 0;
         for (int i = 0; i < chars.length; i++) {
-            quantity = 0;
             if (chars[i] == c) {
                 quantity++;
-                System.out.println("1. փոփոխականի քանակը " + quantity + " է:");
+
             }
 
         }
+        System.out.println("1. փոփոխականի քանակը մասիվի մեջ " + quantity + " է:");
 
 
         char[] chars2 = {'j', 'a', 'v', 'a', 'l', 'o', 'v', 'e'};
@@ -23,17 +23,8 @@ public class CharArrayExample {
 
         char[] chars3 = {'j', 'a', 'v', 'a', 'l', 'o', 'l', 'y'};
         System.out.print("3. ");
-        boolean a = true;
-        boolean b = false;
-        if (chars3[chars3.length - 2] == 'l') {
-            if (chars3[chars3.length - 1] == 'y')
-                System.out.println(a);
+        System.out.println(chars3[chars3.length - 2] == 'l' && (chars3[chars3.length - 1] == 'y'));
 
-
-        } else {
-            System.out.println(b);
-
-        }
 
         char[] text = {' ', ' ', 'b', 'a', 'r', 'e', 'v', ' ', ' '};
         System.out.print("4. ");
@@ -44,4 +35,7 @@ public class CharArrayExample {
 
         }
     }
+
+
 }
+
