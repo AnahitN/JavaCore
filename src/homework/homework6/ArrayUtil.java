@@ -1,16 +1,8 @@
-package homework.homework2;
+package homework.homework6;
 
 public class ArrayUtil {
-
-    public static void main(String[] args) {
-        int[] array = {2, 5, 8, 10, 32, 22, 11, 66, 12, 30};
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-
-        }
-        System.out.println();
-        int max;
-        max = array[0];
+    void maxOfArray(int[] array) {
+        int max = array[0];
         for (int i = 0; i < array.length; i++) {
 
             if (array[i] > max) {
@@ -20,7 +12,10 @@ public class ArrayUtil {
 
         }
         System.out.println("մասիվի ամենամեծ թիվը " + max + " է։");
+    }
 
+
+    void minOfArray(int[] array) {
         int min = array[0];
         for (int i = 0; i < array.length; i++) {
             if (array[i] < min) {
@@ -29,7 +24,9 @@ public class ArrayUtil {
 
         }
         System.out.println("մասիվի ամենափոքր թիվը " + min + " է։");
+    }
 
+    void evenNumbers(int[] array) {
         System.out.println("մասիվի զույգ  թվերն են՝");
         int i;
         int even = 0;
@@ -42,7 +39,9 @@ public class ArrayUtil {
         }
         System.out.println();
         System.out.println("զույգ թվերի քանակը " + even + " է։");
+    }
 
+    void oddNumbers(int[] array) {
         System.out.println("մասիվի կենտ թվերն են՝");
         int odd = 0;
         for (int j = 0; j < array.length; j++) {
@@ -54,24 +53,35 @@ public class ArrayUtil {
         }
         System.out.println();
         System.out.println("կենտ թվերի քանակը " + odd + " է։");
+    }
 
-
+    void average(int[] array) {
         int result = 0;
         for (int j = 0; j < array.length; j++) {
             result = result + array[j];
 
         }
         System.out.println("Միջին թվաբանականը հավասար է " + result / array.length + "-ի");
-
-        System.out.println("Մասիվի էլեմենտների գումարը հավասար է " + result + "-ի");
-        System.out.println("մասիվի առաջին էլեմենտը " + array[0] + "ն է։");
-        System.out.println("մասիվի վերջին էլեմենտը " + array[array.length - 1] + "ն է։");
-        System.out.println("մասիվի մեջտեղի էլեմենտը " + array[array.length / 2] + "ն է։");
     }
 
+    void sum(int[] array) {
+        int result = 0;
+        for (int j = 0; j < array.length; j++) {
+            result = result + array[j];
 
+        }
+        System.out.println("Մասիվի էլեմենտների գումարը հավասար է " + result + "-ի");
+    }
+
+    void firstNumber(int[] array) {
+        System.out.println("մասիվի առաջին էլեմենտը " + array[0] + "ն է։");
+    }
+
+    void lastNumber(int[] array) {
+        System.out.println("մասիվի վերջին էլեմենտը " + array[array.length - 1] + "ն է։");
+    }
+
+    void midOfArray(int[] array) {
+        System.out.println("մասիվի մեջտեղի էլեմենտը " + array[array.length / 2] + "ն է։");
+    }
 }
-
-
-
-
