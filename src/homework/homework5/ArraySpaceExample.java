@@ -5,29 +5,34 @@ public class ArraySpaceExample {
     public static void main(String[] args) {
 
         char[] spaceArray = {' ', 'c', 'a', 't', ' ', 'b', 'i', ' ', 'b', ' ', ' '};
-        int indexCount = 0;
+        int startIndex = 0;
+        int endIndex = spaceArray.length - 1;
         for (int i = 0; i < spaceArray.length; i++) {
             if (spaceArray[i] == ' ') {
-                continue;
-            } else if (spaceArray[i] != ' ') {
-                indexCount++;
+                startIndex++;
+            } else {
 
+                break;
             }
-            break;
 
         }
-        for (int i = spaceArray.length - 1; i > 0; i--) {
+        for (int i = spaceArray.length - 1; i >= 0; i--) {
             if (spaceArray[i] == ' ') {
-                continue;
-            } else if (spaceArray[i] != ' ') {
+                endIndex--;
+            } else {
+
+                break;
             }
-            break;
         }
 
-        char[] result = new char[spaceArray[spaceArray.length-1]-spaceArray[0]+1];
-        for (int i = 0; i < result.length; i++) {
-            result[i] = spaceArray[i];
-            System.out.print(result[i]);
+        char[] result = new char[endIndex - startIndex + 1];
+        int j = 0;
+        for (int i = startIndex; i <= endIndex; i++) {
+
+            result[j++] = spaceArray[i];
+        }
+        for (char c : result) {
+            System.out.print(c);
         }
 
 
