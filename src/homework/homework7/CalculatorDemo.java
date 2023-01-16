@@ -23,6 +23,8 @@ public class CalculatorDemo {
         System.out.println(resultdivide);
         resultdivide = calc.divide(7620, 30);
         System.out.println(resultdivide);
+        resultdivide = calc.divide(10, 0);
+        System.out.println(resultdivide);
 
         double resultmultiply;
         resultmultiply = calc.multiply(7.5, 5);

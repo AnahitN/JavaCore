@@ -10,6 +10,13 @@ public class Calculator {
     }
 
     int divide(int x, int y) {
+
+        if (y == 0) {
+
+            System.out.println("Թիվը 0-ի չի բաժանվում");
+            return  -1;
+
+        }
         return x / y;
     }
 
