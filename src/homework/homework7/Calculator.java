@@ -13,7 +13,7 @@ public class Calculator {
 
         if (y == 0) {
 
-            System.out.println("Թիվը 0-ի չի բաժանվում");
+            System.out.print("Թիվը 0-ի չի բաժանվում  ");
             return  -1;
 
         }
