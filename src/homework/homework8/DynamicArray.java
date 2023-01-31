@@ -44,8 +44,9 @@ public class DynamicArray {
     //ջնջել մասիվի index-երորդ էլեմենտը
 //եթե չկա նման ինդեքսով էլեմենտ, տպել, որ չկա նման էլեմենտ
     public void deleteByIndex(int index) {
-        if (index < 0 && index > array.length) {
+        if (index < 0 || index > size - 1) {
             System.out.println("Նման էլեմենթ չկա!");
+            return;
         }
 
 
@@ -63,10 +64,9 @@ public class DynamicArray {
 //եթե նման ինդեքսով էլեմենտ չկա, գրում ենք որ չկա։
     public void set(int index, int value) {
 
-
-        if (index < 0 && index > array.length) {
+        if (index < 0 || index > size - 1) {
             System.out.println("Նման էլեմենթ չկա!");
-
+            return;
         }
 
         array[index] = value;
@@ -76,15 +76,17 @@ public class DynamicArray {
 //Եթե չկա նման ինդեքս, տպել որ չկա
     public void add(int index, int value) {
 
-        array[index] = value;
-
-        for (int i = 0; i < array.length; i++) {
-            array[i] = array[i++];
-        }
         if (index < 0 && index > array.length) {
             System.out.println("Նման էլեմենթ չկա!");
-
         }
+        if (size == array.length) {
+            extend();
+        }
+
+        for (int i = size; i >= index; i--) {
+            array[i] = array[i--];
+        }
+        array[index] = value;
 
 
     }
@@ -92,11 +94,9 @@ public class DynamicArray {
 
     //Վերադարձնել true եթե տրված value-ն կա մեր մասիվի մեջ, եթե ոչ false
     public boolean exists(int value) {
-        for (int i = 0; i < array.length; i++) {
-
+        for (int i = 0; i < size; i++) {
 
             if (value == array[i]) {
-
 
                 return true;
             }
@@ -111,24 +111,12 @@ public class DynamicArray {
 
         int first;
         for (int i = 0; i < size; i++) {
-            for (int j = i + 1; j < size; j++) {
-                if (i != j && array[i] == array[j]) {
-
-                    if (i < j) {
-                        first = i;
-                    }
-                    first = j;
-                    return first;
-                }
+            if (array[i] == value) {
+                return i;
             }
-
-        }
-        if (value < 0 && value > size) {
-
-            return -1;
         }
 
-
+        return -1;
     }
 
 
