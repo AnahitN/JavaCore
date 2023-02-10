@@ -17,16 +17,14 @@ public class BraceChecker {
         StackForBraces stack = new StackForBraces();
 
         text.toCharArray();
+        char lastBracket;
         for (int i = 0; i < text.length(); i++) {
             char sym = text.charAt(i);
             char sym2;
+
             switch (sym) {
                 case '(':
-                    stack.push(sym);
-                    break;
                 case '[':
-                    stack.push(sym);
-                    break;
                 case '{':
                     stack.push(sym);
                     break;
@@ -34,28 +32,41 @@ public class BraceChecker {
                     sym2 = (char) stack.pop();
                     if (sym2 == 0) {
                         System.out.println("Error: closed " + sym + "at " + i + ", but not opened ");
-                    } else if (sym2 != '(') {
-                        System.out.println("Error: closed " + sym + ", but opened " + sym2 + " at " + i);
+                    } else {
+                        lastBracket = (char) sym2;
+                        if (lastBracket != '(') {
+                            System.out.println("Error: closed " + sym + ", but opened " + sym2 + " at " + i);
+                        }
                     }
                     break;
                 case ']':
                     sym2 = (char) stack.pop();
                     if (sym2 == 0) {
                         System.out.println("Error: closed " + sym + "at " + i + ", but not opened ");
-                    } else if (sym2 != '[') {
-                        System.out.println("Error: closed " + sym + ", but opened " + sym2 + " at " + i);
+                    } else {
+                        lastBracket = (char) sym2;
+                        if (lastBracket != '[') {
+                            System.out.println("Error: closed " + sym + ", but opened " + sym2 + " at " + i);
+                        }
                     }
                     break;
                 case '}':
                     sym2 = (char) stack.pop();
                     if (sym2 == 0) {
                         System.out.println("Error: closed " + sym + "at " + i + ", but not opened ");
-                    } else if (sym2 != '{') {
-                        System.out.println("Error: closed " + sym + ", but opened " + sym2 + " at " + i);
+                    } else {
+                        lastBracket = (char) sym2;
+                        if (sym2 != '{') {
+                            System.out.println("Error: closed " + sym + ", but opened " + sym2 + " at " + i);
+                        }
                     }
                     break;
             }
         }
+        while ((lastBracket = (char)stack.pop()) != 0) {
+            System.out.println("Error: opened " + lastBracket + ", but not closed");
+        }
+
 
     }
 }
