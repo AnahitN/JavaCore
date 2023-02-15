@@ -1,5 +1,7 @@
 package homework.employee;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -12,17 +14,32 @@ public class Employee {
     private double salary;
     private String company;
     private String position;
+    private boolean active = true;
+    private Date registerDate;
+    private Date dateOfBirthday;
 
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", employeeID='" + employeeID + '\'' +
-                ", salary=" + salary +
-                ", company='" + company + '\'' +
-                ", position='" + position + '\'' +
-                '}';
+
+    public Employee() {
+    }
+
+
+    public Employee(String name, String surname, String employeeID, double salary, String company, String position, Date dateOfBirthday, Date registerDate) {
+        this.name = name;
+        this.surname = surname;
+        this.employeeID = employeeID;
+        this.salary = salary;
+        this.company = company;
+        this.position = position;
+        this.dateOfBirthday = dateOfBirthday;
+        this.registerDate = registerDate;
+    }
+
+    public Date getRegisterDate() {
+        return registerDate;
+    }
+
+    public void setRegisterDate(Date registerDate) {
+        this.registerDate = registerDate;
     }
 
     @Override
@@ -30,30 +47,12 @@ public class Employee {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return Double.compare(employee.salary, salary) == 0 && Objects.equals(name, employee.name) && Objects.equals(surname, employee.surname) && Objects.equals(employeeID, employee.employeeID) && Objects.equals(company, employee.company) && Objects.equals(position, employee.position);
+        return Double.compare(employee.salary, salary) == 0 && active == employee.active && Objects.equals(name, employee.name) && Objects.equals(surname, employee.surname) && Objects.equals(employeeID, employee.employeeID) && Objects.equals(company, employee.company) && Objects.equals(position, employee.position) && Objects.equals(registerDate, employee.registerDate) && Objects.equals(dateOfBirthday, employee.dateOfBirthday);
     }
 
     @Override
     public int hashCode() {
-        int result;
-        long temp;
-
-
-        return Objects.hash(name, surname, employeeID, salary, company, position);
-    }
-
-    public Employee() {
-    }
-
-    ;
-
-    public Employee(String name, String surname, String employeeID, double salary, String company, String position) {
-        this.name = name;
-        this.surname = surname;
-        this.employeeID = employeeID;
-        this.salary = salary;
-        this.company = company;
-        this.position = position;
+        return Objects.hash(name, surname, employeeID, salary, company, position, active, registerDate, dateOfBirthday);
     }
 
     public String getName() {
@@ -104,7 +103,28 @@ public class Employee {
         this.position = position;
     }
 
-    static EmployeeStorage empStrg = new EmployeeStorage();
 
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", employeeID='" + employeeID + '\'' +
+                ", salary=" + salary +
+                ", company='" + company + '\'' +
+                ", position='" + position + '\'' +
+                ", active=" + active +
+                ", registerDate=" + registerDate +
+                ", dateOfBirthday=" + dateOfBirthday +
+                '}';
+    }
 
 }
