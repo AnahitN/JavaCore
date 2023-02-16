@@ -15,7 +15,8 @@ public class Employee {
     private String company;
     private String position;
     private boolean active = true;
-    private Date registerDate;
+    private java.util.Date Date;
+    private Date registerDate = new Date();
     private Date dateOfBirthday;
 
 
@@ -23,7 +24,7 @@ public class Employee {
     }
 
 
-    public Employee(String name, String surname, String employeeID, double salary, String company, String position, Date dateOfBirthday, Date registerDate) {
+    public Employee(String name, String surname, String employeeID, double salary, String company, String position, Date dateOfBirthday) {
         this.name = name;
         this.surname = surname;
         this.employeeID = employeeID;
@@ -31,7 +32,7 @@ public class Employee {
         this.company = company;
         this.position = position;
         this.dateOfBirthday = dateOfBirthday;
-        this.registerDate = registerDate;
+
     }
 
     public Date getRegisterDate() {
@@ -122,8 +123,8 @@ public class Employee {
                 ", company='" + company + '\'' +
                 ", position='" + position + '\'' +
                 ", active=" + active +
-                ", registerDate=" + registerDate +
                 ", dateOfBirthday=" + dateOfBirthday +
+                ",regiterDate=" + registerDate+
                 '}';
     }
 

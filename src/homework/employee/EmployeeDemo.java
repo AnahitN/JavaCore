@@ -10,15 +10,15 @@ public class EmployeeDemo {
     private static EmployeeStorage empStrg = new EmployeeStorage();
     private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     static Date dateOfBirthday = new Date();
-    static Date registerDate = new Date();
+    Date registerDate = new Date();
 
 
     public static void main(String[] args) throws ParseException {
 
         boolean isRun = true;
-        empStrg.add(new Employee("Poxos", "Poxosyan", "a001", 100, "company", "jr. manager", sdf.parse("12/12/2012"), registerDate));
-        empStrg.add(new Employee("Petros", "Poxosyan", "a002", 200, "company", "manager", sdf.parse("23/12/1999"), registerDate));
-        empStrg.add(new Employee("Martiros", "Poxosyan", "a003", 300, "company", "sr. manager", sdf.parse("11/11/1991"), registerDate));
+        empStrg.add(new Employee("Anahit", "Tadevosyan", "a001", 500, "company", "jr. manager", sdf.parse("02/12/1997")));
+        empStrg.add(new Employee("Petros", "Poxosyan", "a002", 200, "company", "manager", sdf.parse("23/12/1999")));
+        empStrg.add(new Employee("Martiros", "Poxosyan", "a003", 300, "company", "sr. manager", sdf.parse("11/11/1991")));
         while (isRun) {
             printCommands();
 
@@ -151,7 +151,7 @@ public class EmployeeDemo {
         String employeeId = employeeData[2];
         Employee employeeById = empStrg.getEmployeeById(employeeId);
         if (employeeById == null) {
-            Employee employee = new Employee(employeeData[0], employeeData[1], employeeData[2], Double.parseDouble(employeeData[3]), employeeData[4], employeeData[5], sdf.parse(employeeData[6]), sdf.parse(employeeData[7]));
+            Employee employee = new Employee(employeeData[0], employeeData[1], employeeData[2], Double.parseDouble(employeeData[3]), employeeData[4], employeeData[5], sdf.parse(employeeData[6]));
             empStrg.add(employee);
             System.out.println("Employee was  added!");
         } else {
