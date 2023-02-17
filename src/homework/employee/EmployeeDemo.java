@@ -145,7 +145,7 @@ public class EmployeeDemo {
     }
 
     private static void addEmployee() throws ParseException {
-        System.out.println("Please input employee's name, surname, ID, salary, company name, position");
+        System.out.println("Please input employee's name, surname, ID, salary, company name, position,date of birthday");
         String employeeDataStr = scanner.nextLine();
         String[] employeeData = employeeDataStr.split(",");
         String employeeId = employeeData[2];
