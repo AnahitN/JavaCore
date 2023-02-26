@@ -1,9 +1,9 @@
-package homework.employee;
+package homework.employee.model;
 
-import java.text.SimpleDateFormat;
+import homework.employee.util.DateUtil;
+
 import java.util.Date;
 import java.util.Objects;
-import java.util.Scanner;
 
 public class Employee {
 
@@ -12,7 +12,7 @@ public class Employee {
     private String surname;
     private String employeeID;
     private double salary;
-    private String company;
+    private Company company;
     private String position;
     private boolean active = true;
     private java.util.Date Date;
@@ -24,7 +24,7 @@ public class Employee {
     }
 
 
-    public Employee(String name, String surname, String employeeID, double salary, String company, String position, Date dateOfBirthday) {
+    public Employee(String name, String surname, String employeeID, double salary, Company company, String position, Date registerDate,Date dateOfBirthday) {
         this.name = name;
         this.surname = surname;
         this.employeeID = employeeID;
@@ -32,6 +32,7 @@ public class Employee {
         this.company = company;
         this.position = position;
         this.dateOfBirthday = dateOfBirthday;
+        this.registerDate = registerDate;
 
     }
 
@@ -88,11 +89,11 @@ public class Employee {
         this.salary = salary;
     }
 
-    public String getCompany() {
+    public Company getCompany() {
         return company;
     }
 
-    public void setCompany(String company) {
+    public void setCompany(Company company) {
         this.company = company;
     }
 
@@ -123,8 +124,8 @@ public class Employee {
                 ", company='" + company + '\'' +
                 ", position='" + position + '\'' +
                 ", active=" + active +
-                ", dateOfBirthday=" + dateOfBirthday +
-                ",regiterDate=" + registerDate+
+                ",regiterDate=" + DateUtil.dateToString(registerDate)+
+                ", dateOfBirthday=" + DateUtil.dateToString(dateOfBirthday) +
                 '}';
     }
 
