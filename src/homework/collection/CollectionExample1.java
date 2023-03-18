@@ -26,7 +26,7 @@ public class CollectionExample1 {
                     isRun = false;
                     break;
                 case "1":
-                    checkName();
+                    doesContainName();
                     break;
                 case "2":
                     deleteName();
@@ -40,20 +40,21 @@ public class CollectionExample1 {
         }
     }
 
-    public static void checkName() {
+    private static boolean doesContainName() {
         System.out.println("Please input name");
         String name = scanner.nextLine();
-        for (String s : names) {
-            if (s.equals(name)) {
+       if (names.contains(name)) {
                 System.out.println("name \"" + name + "\" exists");
-            } else {
-                System.out.println("there is no name \"" + name + "\" in the list");
-                return;
+           return true;
             }
-            return;
+           else {
+                System.out.println("there is no name \"" + name + "\" in the list");
+           return false;
+            }
+
         }
 
-    }
+
 
     public static void deleteName() {
         System.out.println("Please input name");
