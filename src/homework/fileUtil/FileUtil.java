@@ -53,14 +53,14 @@ public class FileUtil {
         String keyword = fileDataStr[1];
         File directory = new File(path);
 
-        String[] list = directory.list();
-        for (String s : list) {
-            if (s.contains(".txt")) {
-                try (BufferedReader inputStream = new BufferedReader(new FileReader(path))) {
+        File[] list = directory.listFiles();
+        for (File s : list) {
+            if (s.getName().contains(".txt")) {
+                try (BufferedReader inputStream = new BufferedReader(new FileReader(s))) {
                     String line = "";
                     while ((line = inputStream.readLine()) != null) {
                         if (line.contains(keyword)) {
-                            System.out.println("file is " + s);
+                            System.out.println("file is: " + s.getName());
 
                         }
                     }
@@ -84,15 +84,21 @@ public class FileUtil {
         String[] dataStr = data.split(",");
         String txtPath = dataStr[0];
         String keyword = dataStr[1];
-        try (BufferedReader bf = new BufferedReader(new FileReader(txtPath))){
-            String line = "";
-            while ((line = bf.readLine()) != null) {
-                if (line.contains(keyword)) {
-                    System.out.println(line);
+        File directory = new File(txtPath);
+        File[] files = directory.listFiles();
+        for (File file : files) {
+            if (file.getName().endsWith(".txt")) {
+                try (BufferedReader bf = new BufferedReader(new FileReader(file))) {
+                    String line = "";
+                    while ((line = bf.readLine()) != null) {
+                        if (line.contains(keyword)) {
+                            System.out.println(line);
+                        }
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
-        } catch (IOException e ) {
-            e.printStackTrace();
         }
     }
 
@@ -123,9 +129,9 @@ public class FileUtil {
         String path = dataStr[0];
         String fileName = dataStr[1];
         String content = dataStr[2];
-        File file = new File(path,fileName);
+        File file = new File(path, fileName);
         if (!file.exists()) {
-         boolean isCreated = file.createNewFile();
+            boolean isCreated = file.createNewFile();
             System.out.println(isCreated + "file is created");
             String filePath = file.getAbsolutePath();
             try (BufferedWriter bf = new BufferedWriter(new FileWriter(filePath))) {
