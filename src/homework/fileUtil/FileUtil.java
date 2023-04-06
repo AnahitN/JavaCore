@@ -11,9 +11,10 @@ public class FileUtil {
     public static void main(String[] args) throws IOException {
         fileSearch();
         contentSearch();
+        findLines();
         printSizeOfPackage();
         createFileWithContent();
-        findLines();
+
     }
 
     //այս մեթոդը պետք է սքաններով վերցնի երկու string.

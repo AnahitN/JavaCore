@@ -12,14 +12,15 @@ public class DynamicArrayDemo {
         dy.add(5);
         dy.add(6);
         dy.add(7);
-
-        dy.set(7, 70);
         dy.print();
-
-        dy.add(4, 66);
+dy.deleteByIndex(5);
+//        dy.set(7, 70);
         dy.print();
+//
+//        dy.add(4, 66);
+//        dy.print();
 
-        System.out.println(dy.exists(888));
+       // System.out.println(dy.exists(888));
 
 
 

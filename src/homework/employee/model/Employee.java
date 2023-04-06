@@ -15,7 +15,6 @@ public class Employee {
     private Company company;
     private String position;
     private boolean active = true;
-    private java.util.Date Date;
     private Date registerDate = new Date();
     private Date dateOfBirthday;
 

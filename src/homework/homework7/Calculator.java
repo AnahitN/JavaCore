@@ -15,14 +15,10 @@ public class Calculator {
 
             System.out.print("Թիվը 0-ի չի բաժանվում  ");
             return  -1;
-
         }
         return x / y;
     }
-
     double multiply(double m, int n) {
         return m * n;
     }
-
-
 }
